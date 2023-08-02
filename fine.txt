@@ -1,0 +1,4 @@
+Aug 01, 2023 6:08:44 PM Logger_Practice.MyLogger warning
+WARNING: 잘못된 형식의 이름입니다.
+Aug 01, 2023 6:08:44 PM Logger_Practice.MyLogger fine
+FINE: begin getStudentName()
