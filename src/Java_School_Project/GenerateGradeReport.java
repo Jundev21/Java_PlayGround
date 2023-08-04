@@ -7,8 +7,8 @@ public class GenerateGradeReport {
     AdminControl school = AdminControl.getInstance();
 
     public static final String TITLE = " 수강생 학점 \t\t\n";
-    public static final String HEADER = " 이름  |  학번  |중점과목| 점수   \n";
-    public static final String LINE = "-------------------------------------\n";
+    public static final String HEADER = " 이름  |  학번  | 중점과목 | 점수   \n";
+    public static final String LINE = "=====================================\n";
 
     // 스트링대신 스트링 버퍼를 사용하여 메모리 누수를 막는다.
     private final StringBuffer buffer = new StringBuffer();
@@ -52,7 +52,7 @@ public class GenerateGradeReport {
 
             getScoreGrade(s, subject.getSubjectId());
             buffer.append("\n");
-            buffer.append(LINE);
+//            buffer.append(LINE);
 
 
         }
