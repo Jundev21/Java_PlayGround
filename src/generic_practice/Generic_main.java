@@ -7,8 +7,6 @@ package generic_practice;
 //아무타입이나 받아 올 수 없도록 제한을 걸어둔 것
 // 부모클래스로부터 상속받은 클래스만 사용 가능하다.
 
-
-
 public class Generic_main {
 
     public static void main(String[] args) {
@@ -25,7 +23,7 @@ public class Generic_main {
 //        System.out.println(getWood.toString());
 
 
-        MakeHouse<Wood_material> secondHouse = new MakeHouse<>();
+        MakeHouse<Wood_material> secondHouse = new MakeHouse<Wood_material>();
 
         secondHouse.setObj(new Wood_material());
 

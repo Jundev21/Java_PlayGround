@@ -1,6 +1,6 @@
 package generic_practice;
 
-public class MakeHouse<T extends OtherFrame> {
+public class MakeHouse <T> {
 
     private T obj;
 

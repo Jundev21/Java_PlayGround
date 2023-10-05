@@ -16,7 +16,6 @@ public class School_Project_Main {
         test.createSubject();
         test.createStudent();
 
-
         String report = test.gradeReport.getReport();
         System.out.println(report);
 

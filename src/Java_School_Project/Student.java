@@ -15,7 +15,6 @@ public class Student {
         this.studentId = studentId;
         this.studentName = studentName;
         this.majorSubject = majorSubject;
-        scoreList = new ArrayList<>();
     }
 
     public void addSubjectScore(Score score) {

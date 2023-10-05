@@ -2,7 +2,7 @@ package Java_School_Project;
 
 import java.util.ArrayList;
 
-public class GenerateGradeReport {
+class GenerateGradeReport {
 
     AdminControl school = AdminControl.getInstance();
 
