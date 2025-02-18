@@ -21,25 +21,5 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        char a = 'a';
-
-
-        if( a == 'a'){
-            System.out.println("same");
-
-        }
-        else if( a=='a'){
-            System.out.println("same 2");
-        }
-
-        if( a == 'a'){
-            System.out.println("same3");
-
-        }
-
-
     }
-
-
-
 }
