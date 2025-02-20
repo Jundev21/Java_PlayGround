@@ -8,10 +8,11 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
 
         // Queue 선택
-        QueueBuffer buffer = new QueueBuffer(2);
+//        QueueBuffer buffer = new QueueBuffer(2);
+//        Buffer buffer = new LockQueueBuffer2(2);
+        BoundedQueue buffer = new BoundedQueue(2);
 
         // 생산자 먼저실행
-//        producerFirst(buffer);
 
         consumerFirst(buffer);
 
@@ -19,7 +20,7 @@ public class Main {
 
     }
 
-    private static void consumerFirst(QueueBuffer queue) throws InterruptedException {
+    private static void consumerFirst(Buffer queue) throws InterruptedException {
 
         List<Thread> threadList = new ArrayList<Thread>();
         System.out.println("소비자자 먼저 시작" + queue.getClass().getSimpleName());
@@ -29,10 +30,10 @@ public class Main {
         startProducer(threadList, queue);
         printAllState(threadList);
 
-        System.out.println("생산자 종료" + queue.getClass().getSimpleName());
+        System.out.println("소비자 종료" + queue.getClass().getSimpleName());
     }
 
-    private static void producerFirst(QueueBuffer queue) throws InterruptedException {
+    private static void producerFirst(Buffer queue) throws InterruptedException {
 
         List<Thread> threadList = new ArrayList<Thread>();
         System.out.println("생산자 먼저 시작" + queue.getClass().getSimpleName());
@@ -45,15 +46,13 @@ public class Main {
         System.out.println("생산자 종료" + queue.getClass().getSimpleName());
     }
 
-    private static void startConsumer(List<Thread> threadList, QueueBuffer queue) throws InterruptedException {
-
+    private static void startConsumer(List<Thread> threadList, Buffer queue) throws InterruptedException {
         System.out.println("소비자 시작");
         for (int i = 1; i <= 3; i++) {
             Thread thread = new Thread(new Consumer(queue), "producer " + i);
             threadList.add(thread);
             thread.start();
             Thread.sleep(100);
-
         }
 
     }
@@ -66,7 +65,7 @@ public class Main {
         }
     }
 
-    private static void startProducer(List<Thread> threadList, QueueBuffer queue) throws InterruptedException {
+    private static void startProducer(List<Thread> threadList, Buffer queue) throws InterruptedException {
         System.out.println("생산자 스레드 시작");
         for (int i = 1; i <= 3; i++) {
             Thread thread = new Thread(new Producer(queue, String.valueOf(i)));

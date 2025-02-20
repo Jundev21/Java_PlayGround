@@ -13,7 +13,11 @@ public class Producer implements Runnable {
     @Override
     public void run() {
         System.out.println("[생산시도] " + value + "->" + buffer);
-        buffer.put(value);
+        try {
+            buffer.put(value);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("[생산완료] " + value + "->" + buffer);
 
     }
